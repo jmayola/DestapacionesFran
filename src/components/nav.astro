@@ -1,0 +1,26 @@
+---
+export const ListHeader = [
+  "inicio",
+  "Acerca de Nosotros",
+  "Galeria",
+  "Blog",
+  "Contacto",
+];
+---
+ 
+<header class="w-screen overflow-hidden">
+  <nav class="bg-[#bb2222] grid grid-flow-col justify-evenly place-items-center">
+    <img src="" class="" alt="Destapaciones Fran">
+    <ul class="p-5 gap-10 grid grid-flow-col">
+      {
+        ListHeader.map((v, i) => {
+          return (
+            <a href={"/" + v} class="h-full">
+              {v}
+            </a>
+          );
+        })
+      }
+    </ul>
+  </nav>
+</header>
