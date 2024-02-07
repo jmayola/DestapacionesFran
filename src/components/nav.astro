@@ -6,17 +6,28 @@ export const ListHeader = [
   "Blog",
   "Contacto",
 ];
+export const HeaderIcons = ["!", "$", "%", "&", "/"];
 ---
- 
-<header class="w-screen overflow-hidden">
-  <nav class="bg-[#bb2222] grid grid-flow-col justify-evenly place-items-center">
-    <img src="" class="" alt="Destapaciones Fran">
-    <ul class="p-5 gap-10 grid grid-flow-col">
+
+<header class=" overflow-hidden">
+  <nav
+    class="bg-[#bb2222] grid grid-flow-col justify-between place-items-center"
+  >
+    <img src="" class="" alt="Destapaciones Fran" />
+    <ul id="redirectories" class="min-w-[25vw] grid grid-flow-col delay-1000">
       {
-        ListHeader.map((v, i) => {
+        HeaderIcons.map((v, i) => {
           return (
-            <a href={"/" + v} class="h-full">
-              {v}
+            <a
+              href={"/" + ListHeader[i]}
+              class="grid grid-flow-col"
+            >
+              <div class="iconNav flex flex-row bg-red-800 delay-1000 p-3">
+                {v}
+                <p class="ListElement w-0 hidden p-0 overflow-hidden delay-1000 text-center">
+                  {ListHeader[i]}
+                </p>
+              </div>
             </a>
           );
         })
@@ -24,3 +35,26 @@ export const ListHeader = [
     </ul>
   </nav>
 </header>
+<style>
+  *{
+    font-size: 16px;
+    resize: none;
+  }
+  #redirectories{
+    width: 20vw;
+    transition: 300ms;
+  }
+  #redirectories:hover{
+    min-width: 30vw;
+  }
+  .iconNav:hover > .ListElement{
+    display: flex;
+    flex-direction: row;
+    white-space: nowrap;
+    animation: typing 300ms forwards;
+  }
+  @keyframes typing{
+    0%{width: 0%;}
+    100%{width: 100%;}
+  }
+</style>

@@ -2,30 +2,49 @@
 import { ListHeader } from "./nav.astro";
 ---
 
-<footer>
-  <ul class="footer">
-    <a href="" class="element">Facebook</a>
-    <a href="" class="element">WhatsApp</a>
-    <a href="" class="element">Telefono</a>
-  </ul>
-  <ul class="footer">
-    <li class="element"><img src="" alt=""></li>
-    <li class="element">Todos los derechos reservados &copy</li>
-  </ul>
-  <ul class="footer">
-    {
-        ListHeader.map((v)=>{
-            return(
-                <a href={"/"+v} class="element">{v}</a>
-            )
-        })
-    }
+<footer class="bg-slate-700 p-10 text-gray-400 ">
+  <div class="grid grid-flow-col text-left p-5">
+    <ul class="items-center col-start-1 col-end-2 p-4 grid w-min">
+      <h3 class="text-2xl whitespace-nowrap">Destapaciones Fran</h3>
+      <h3 class="text-sm whitespace-nowrap text-center">Servicio las 24hs</h3>
+    </ul>
+    <div class="flex flex-col">
+      <h4 class="text-xl text-left">Contacto</h4>
+      <ul>
+        <li>destapacionesfran@gmail.com</li>
+        <li>+54 11 5818-7993</li>
+      </ul>
+    </div>
+    <div class="flex flex-col">
+      <h4 class="text-xl text-left text-gray-300">
+        Navegador
+      </h4>
+      <ul class="grid grid-cols-1 text-left">
+        {
+          ListHeader.map((v) => {
+            return (
+              <a href={"/" + v} class="element">
+                {v}
+              </a>
+            );
+          })
+        }
+      </ul>
+    </div>
+  </div>
+  <ul class="text-left p-10 border-t-4">
+    <ul class="flex flex-row place-content-center gap-5 p-3">
+      <a href="" class="element">Facebook</a>
+      <a href="" class="element">WhatsApp</a>
+      <a href="" class="element">Telefono</a>
+    </ul>
+    <li class="list-none grid w-full text-center place-content-center">
+      Destapaciones Fran &copy Todos los derechos reservados
+    </li>
   </ul>
 </footer>
 <style>
-    .footer{
-        display: grid;
-        grid-row: auto;
-        grid-column: auto;
-    }
+  li {
+    list-style: none;
+  }
 </style>
