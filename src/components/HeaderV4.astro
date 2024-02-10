@@ -1,0 +1,53 @@
+---
+export const ListHeader = [
+  "Inicio",
+  "Nosotros",
+  "Contacto",
+  "Blog",
+];
+export const HeaderIcons = ["home", "people", "phone", "files"];
+import {Icon} from "astro-icon/components"
+---
+
+<header class="h-[80px] overflow-hidden bg-[#FEFCFC] px-5 max-sm:h-auto">
+  <nav
+    class="grid grid-flow-col justify-between place-items-center max-sm:grid-flow-row max-sm:justify-center"
+  >
+    <img src="logoFran.jpg" class="h-[80px]" alt="DestapacionesFran">
+    <ul id="redirectories" class="min-w-[25vw] grid grid-flow-col delay-1000 gap-5 max-sm:grid-flow-row max-sm:justify-center">
+      {
+        HeaderIcons.map((v, i) => {
+          return (
+            <a
+              href={"#" + ListHeader[i]}
+              class="grid grid-flow-col"
+            >
+              <div class="iconNav flex flex-row place-content-center place-items-center gap-5">
+                <Icon name={"mdi:"+v}/>
+                <p class="ListElement whitespace-nowrap text-[]  text-center">
+                  {ListHeader[i]}
+                </p>
+              </div>
+            </a>
+          );
+        })
+      }
+    </ul>
+  </nav>
+</header>
+<style>
+  *{
+    font-size: 16px;
+    resize: none;
+  }
+  #redirectories{
+    transition: 300ms;
+  }
+  .iconNav:hover > .ListElement{
+    transform: scale(1.1);
+  }
+  @keyframes typing{
+    0%{width: 0%;}
+    100%{width: 100%;}
+  }
+</style>

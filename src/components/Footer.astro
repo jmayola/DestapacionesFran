@@ -1,9 +1,10 @@
 ---
-import { ListHeader } from "./nav.astro";
+import { ListHeader } from "./HeaderV1.astro";
+import {Icon} from "astro-icon/components";
 ---
 
-<footer class="bg-slate-700 p-10 text-gray-400 ">
-  <div class="grid grid-flow-col text-left p-5">
+<footer class="bg-gray-darker p-10 text-gray-light ">
+  <div class="grid grid-flow-col text-left max-md:grid-flow-row  p-5">
     <ul class="items-center col-start-1 col-end-2 p-4 grid w-min">
       <h3 class="text-2xl whitespace-nowrap">Destapaciones Fran</h3>
       <h3 class="text-sm whitespace-nowrap text-center">Servicio las 24hs</h3>
@@ -34,9 +35,18 @@ import { ListHeader } from "./nav.astro";
   </div>
   <ul class="text-left p-10 border-t-4">
     <ul class="flex flex-row place-content-center gap-5 p-3">
-      <a href="" class="element">Facebook</a>
-      <a href="" class="element">WhatsApp</a>
-      <a href="" class="element">Telefono</a>
+	<a href="tel:1158187993">
+			<Icon class="h-8 w-16" name="mdi:phone" />
+		</a>	
+		<a href="https://wa.link/ddm3o7">	
+			<Icon class="h-8 w-16" name="mdi:whatsapp" />
+		</a>
+		<a href="https://www.facebook.com/profile.php?id=61555120183999">
+			<Icon class="h-8 w-16" name="mdi:facebook" />
+		</a>
+		<a href="https://www.instagram.com/frandestapaciones">
+			<Icon class="h-8 w-16" name="mdi:instagram"/>
+		</a>
     </ul>
     <li class="list-none grid w-full text-center place-content-center">
       Destapaciones Fran &copy Todos los derechos reservados
