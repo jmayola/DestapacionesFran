@@ -1,27 +1,35 @@
 ---
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
-import Footer from '../components/Footer.astro';
-
+import Footer from "../components/Footer.astro";
+import Nav from "../components/HeaderV4.astro";
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-		<Footer></Footer>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="title" content="Destapaciones En CABA | Zona Oeste | Zona Sur | Zona Norte" />
+    <meta
+      name="description"
+      content="Somos unas empresa de destapaciones que brinda alivio y rapidez toda Zona Oeste, Zona Sur, Zona Norte de Buenos Aires y CABA. Hacemos trabajos con maquina las 24 horas para destapar cocinas, cañerías cloacales, lavamanos, duchas, cámaras sépticas, desagües pluviales, canaletas, rejillas, alcantarillas y más."
+    />
+    <meta name="keywords" content="destapaciones, destapa, destapacion"
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/maquina.svg" />
+    <meta name="author" content="Julian Mayola" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="google-site-verification" content="XfLcaCL9ojibudjwlku7cLk8XS9rxMFLFX7EKnXBVnA" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Nav />
+    <slot />
+    <Footer />
+  </body>
 </html>
-<style>
-</style>
+<style></style>
