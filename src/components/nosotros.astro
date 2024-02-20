@@ -4,15 +4,15 @@ import {Icon} from "astro-icon/components"
 ---
 <section id="Nosotros">
     <div class="h-[100%] text-white bg-red-darker  px-10 py-7">
-        <h1 class="text-8xl max-md:text-6xl mb-10 drop-shadow ">Nosotros</h1>
-	<p class="text-xl text-justify">Somos una empresa de destapaciones con presencia en Buenos Aires, Argentina. Trabajamos las 24 horas del día para asegurar a nuestros clientes una solución rápida y precisa al mejor precio.</p>
-	<section class="bg-red-simple m-2 p-5 grid grid-cols-5 max-md:grid-cols-3  place-items-center place-content-center text-center gap-5 rounded-xl">
+        <h3 class="text-8xl mb-10 drop-shadow ">Nosotros</h3>
+	<p class="text-xl max-lg:text-4xl text-justify mb-5">Somos una empresa de destapaciones con presencia en Buenos Aires, Argentina. Trabajamos las 24 horas del día para asegurar a nuestros clientes una solución rápida y precisa al mejor precio.</p>
+	<section class="bg-red-simple m-2 p-5 grid grid-cols-5 max-lg:grid-cols-3  place-items-center place-content-center text-center gap-5 rounded-xl">
 	{
 		Services.map((v,i)=>{
 			return(
-				<div class="p-5">
+				<div class="p-5 max-lg:p-10">
 				<Icon class="text-center m-auto" name="mdi:pipe" />				
-				<h3 class="text-2xl max-md:text-lg">{v}</h3>
+				<h3 class="text-3xl">{v}</h3>
 				</div>
 				)
 		})

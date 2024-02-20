@@ -6,14 +6,13 @@ interface Props {
 import { Icon } from "astro-icon/components";
 const { question, answer } = Astro.props;
 ---
-
-<div class="detecmovin w-[90vw] m-auto" id="asd">
+<div class="detecmovin w-[90vw] m-auto">
   <div class="movinaroun bg-blue-light"></div>
   <div class="flex flex-row justify-between z-20">
     <div class="py-auto flex flex-row z-20">
       <p class="p-5 bg-blue-light text-4xl z-20">?</p>
       <svg
-        class="h-full relative w-[16px]"
+        class="h-full relative w-[16px] ml-[-2px]"
         viewBox="0 0 20 100"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -23,19 +22,18 @@ const { question, answer } = Astro.props;
           fill="#18608C"></path>
       </svg>
     </div>
-    <p class="my-auto max-md:text-lg text-2xl z-20 ">{question}</p>
+    <p class="my-auto text-2xl max-lg:text-4xl z-20 ">{question}</p>
     <Icon
-      width="32px"
-      height="32px"
-      class="my-auto z-20 arrowico"
+      class="my-auto z-20 arrowico h-[32px] w-[32px] max-lg:h-[40px] max-lg:w-[40px]"
       name="mdi:keyboard-arrow-right"
     />
   </div>
-<p class="p-5 text-justify pl-10 max-m:p-0 bg-gray-light w-0 hidden answer">{answer}</p>
+<p class="p-5 text-justify pl-10 max-lg:text-3xl bg-gray-light w-0 hidden answer" >{answer}</p>
 </div>
 <style>
   *{
     transition-delay: 1000ms;
+    transition: 1000ms;
   }
   .detecmovin {
     transition: 1000ms;
@@ -86,6 +84,7 @@ const { question, answer } = Astro.props;
   let asd = document.getElementById("asd")
   console.log(asd)
   asd.addEventListener("click", (e)=>{
+    console.log(e.target.nodeName)
     document.getElementsByClassName("answer")[0].classList.add("w-full")
     document.getElementsByClassName("answer")[0].classList.add("block")
     document.getElementsByClassName("answer")[0].classList.remove("hidden")

@@ -9,12 +9,13 @@ export const HeaderIcons = ["home", "people", "phone", "files"];
 import {Icon} from "astro-icon/components"
 ---
 
-<header class="h-[80px] overflow-hidden bg-[#FEFCFC] px-5 max-sm:h-auto">
+<header class="h-[80px] overflow-hidden bg-[#FEFCFC] px-5 max-lg:h-auto fixed w-[100vw] z-50">
   <nav
-    class="grid grid-flow-col justify-between place-items-center max-sm:grid-flow-row max-sm:justify-center"
+    class="grid grid-flow-col justify-between place-items-center max-lg:justify-between max-lg:h-[15vh]"
   >
-    <img src="logoFran.jpg" class="h-[80px]" alt="DestapacionesFran">
-    <ul id="redirectories" class="min-w-[25vw] grid grid-flow-col delay-1000 gap-5 max-sm:grid-flow-row max-sm:justify-center">
+    <img src="logoFran.jpg" class="h-[80px] max-lg:h-[15vw]" alt="DestapacionesFran">
+    <button onmouseout="DisplayRedirecOut()" onclick="DisplayDirectories()"><Icon name="mdi:menu" class="HButton max-lg:h-[15vw] max-lg:w-[15vw] hidden max-lg:block" /></button>
+    <ul id="redirectories" class="min-w-[25vw] grid grid-flow-col max-lg:hidden delay-1000 gap-5 max-lg:grid-flow-row max-lg:justify-center max-lg:absolute max-lg:m-auto max-lg:right-50vw max-lg:top-[15vh] max-lg:bg-[rgba(254,252,252,0.9)] max-lg:w-screen ">
       {
         HeaderIcons.map((v, i) => {
           return (
@@ -23,8 +24,8 @@ import {Icon} from "astro-icon/components"
               class="grid grid-flow-col"
             >
               <div class="iconNav flex flex-row place-content-center place-items-center gap-5">
-                <Icon name={"mdi:"+v}/>
-                <p class="ListElement whitespace-nowrap text-[]  text-center">
+                <Icon name={"mdi:"+v} class="max-lg:h-[60px] max-lg:w-[60px] max-lg:absolute left-0" />
+                <p class="ListElement whitespace-nowrap max-lg:text-[60px]  text-center max-lg:pt-10">
                   {ListHeader[i]}
                 </p>
               </div>
@@ -36,12 +37,15 @@ import {Icon} from "astro-icon/components"
   </nav>
 </header>
 <style>
-  *{
-    font-size: 16px;
-    resize: none;
+  .HButton {
+    transition: 1000ms;
   }
-  #redirectories{
-    transition: 300ms;
+  .HButton:hover{
+    transition: 1000ms;
+  }
+  .DisplayDirec{
+    display: block;
+    position: fixed;
   }
   .iconNav:hover > .ListElement{
     transform: scale(1.1);
@@ -51,3 +55,26 @@ import {Icon} from "astro-icon/components"
     100%{width: 100%;}
   }
 </style>
+<script is:inline>
+  let flag = 1;
+  let redirectories = document.getElementById("redirectories")
+  let HButton = document.querySelector(".HButton")
+  function DisplayDirectories(){
+    if(flag == 1){
+    redirectories.classList.add("DisplayDirec")
+  HButton.classList.add("rotate-90")
+
+    flag = 0
+    }
+    else{
+    redirectories.classList.remove("DisplayDirec")
+    HButton.classList.remove("rotate-90")
+    flag=1
+    }
+  }
+  function DisplayRedirecOut(){
+    redirectories.classList.remove("DisplayDirec")
+    HButton.classList.remove("rotate-90")
+    flag=1
+  }
+</script>
