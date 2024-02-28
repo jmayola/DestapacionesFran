@@ -1,0 +1,16 @@
+---
+interface Props {
+ciudad: string;
+}
+const {ciudad} = Astro.props;
+import ButtonV1 from "./buttonV1.astro"
+---
+<section class="pt-[10vh] max-lg:pt-[15vh]">
+    <div id="Inicio" class="h-max-content text-white bg-red-simple px-10 max-lg:px-4 py-7 pb-32">
+        <h1 class="text-8xl text-left  max-lg:mb-4  mb-10 drop-shadow">Destapaciones Fran en <span class="whitespace-nowrap">{ciudad}<span></h1>
+        <h2 class="text-5xl max-lg:text-[50px] mb-10 ">Servicio de destapaciones, atención las 24hs.</h2>
+        <h3 class="text-3xl mb-10 max-w-[650px] max-lg:text-[30px] text-justify">Brindando alivio y rapidez a toda Zona Oeste, Sur, Norte de Buenos Aires y CABA.</h3>
+	<ButtonV1 class="z-10"/>
+	<img class="absolute right-[5%] drop-shadow-[0_14px_14px_rgba(155,155,155,0.25)] bottom-10 max-max-lg:left-[80%] max-lg:top-[30vh] hover:animate-pulse" src="/maquina.svg" alt="maquina svg"/>
+    </div>
+</section>
